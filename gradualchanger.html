@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Background Color Transition</title>
+	<style>
+		body {
+			background-color: black;
+			transition: background-color 3s ease-in-out;
+		}
+	</style>
+</head>
+<body>
+	<h1>RZ</h1>
+	<p>This page changes its background color from black to white gradually!</p>
+	<button id="color-btn">Change Background Color</button>
+	<script>
+		document.getElementById("color-btn").addEventListener("click", function(){
+			document.body.style.backgroundColor = "white";
+		});
+	</script>
+</body>
+</html>
