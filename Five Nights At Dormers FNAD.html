@@ -9,6 +9,7 @@
 		var vid = document.getElementById("myVideo");
 
 		function start(){
+		document.body.style.backgroundImage = "url('scary.jpg')";
 		var name = window.prompt("Enter your name: ");
 		alert("This is the story of " + name +". " + name +" was just a normal person who went to visit their favourite teacher. Turns out this is the address... (Works better with sound)");
 		
@@ -27,7 +28,8 @@
 		}
 		function three(){
 			document.getElementById("door3").innerHTML = "test";
-		
+			var error = document.getElementById("end");
+			
 		}
 		function playVid(){
 			vid.play();
@@ -65,10 +67,8 @@ body {
 
 <audio id="screambar" src="34NHPJE-gasps.mp3" preload="auto"></audio>
 <audio id="error" src="Windows%20Error%20-%20Sound%20Effect%20.mp3" preload="auto"></audio>
+<audio id="end" src="oh-hell-no-sound-effect-free-download.mp3" preload="auto"></audio>
 
-<video muted loop id="myVideo">
-	<source src="jump%20scare%20video.mp4" type="video/mp4">
-  </video>
 
 <h1><center>FIVE NIGHTS AT DORMERS!
 <br>You've just entered Dormers (The house from the background image) There are 5 doors and only 1 will let you find what you're looking for...</br>You start with door 1...</center><h1>
