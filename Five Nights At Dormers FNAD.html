@@ -1,0 +1,102 @@
+<html>
+
+<head>
+		<title>Five Nights At Dormers.</title>
+		<link rel="stylesheet" href="FNAD.css">
+		
+		
+		<script>
+		var vid = document.getElementById("myVideo");
+
+		function start(){
+		var name = window.prompt("Enter your name: ");
+		alert("This is the story of " + name +". " + name +" was just a normal person who went to visit their favourite teacher. Turns out this is the address... (Works better with sound)");
+		
+		}
+		
+		function one(){
+			document.getElementById("door1").innerHTML = "The door's locked and you walk over to door 2.";
+		
+		}
+		function two(){
+			document.getElementById("door2").innerHTML = "You find this note and you walked behind you to door 5.";
+			document.body.style.backgroundImage = "url('scarynote.jpg')";
+			var scream = document.getElementById("screambar");
+            scream.play();
+		
+		}
+		function three(){
+			document.getElementById("door3").innerHTML = "test";
+		
+		}
+		function playVid(){
+			vid.play();
+			//document.getElementById("door4").innerHTML = "test";
+			
+		}
+		function five(){
+			document.getElementById("door5").innerHTML = "This room is a bit different. You find a laptop with a very peculiar question... (Insert an answer)";
+			document.body.style.backgroundImage = "url('computer.jpg')";
+			var error = document.getElementById("error");
+            error.play();
+		
+		}
+		
+		function answer(){
+			var name = window.prompt("INSERT ANSWER: ");
+			alert("GO TO DOOR 3 NOW! DO NOT GO TO DOOR 4. GO TO DOOR 3! YOU DON'T WANT TO MESS WITH ME!");
+		
+		}
+		
+		</script>
+	
+</head>
+
+<body style="font-family:'Courier New'" onload="start();">
+
+<style onClick="computer();">
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+
+<audio id="screambar" src="34NHPJE-gasps.mp3" preload="auto"></audio>
+<audio id="error" src="Windows%20Error%20-%20Sound%20Effect%20.mp3" preload="auto"></audio>
+
+<video muted loop id="myVideo">
+	<source src="jump%20scare%20video.mp4" type="video/mp4">
+  </video>
+
+<h1><center>FIVE NIGHTS AT DORMERS!
+<br>You've just entered Dormers (The house from the background image) There are 5 doors and only 1 will let you find what you're looking for...</br>You start with door 1...</center><h1>
+
+<table>
+        <tr>
+            <td id="door1" onclick="one();">1</td>
+        </tr>
+        <tr>
+            <td id="door2" onclick="two();">2</td>
+        </tr>
+		<tr>
+            <td id="door3" onclick="three();">3</td>
+        </tr>
+	</table>
+        
+	<button onclick="playVid()" type="button">4</button>
+
+	<table>
+		<tr>
+            <td id="door5" onclick="five();">5</td>
+        </tr>
+		<tr>
+            <td id="insert" onclick="answer();">CLICK TO INSERT AN ANSWER.</td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>
