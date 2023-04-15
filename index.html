@@ -1,21 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Background Color Transition</title>
+	<title>Login System</title>
 	<style>
-		body {
-			background-color: black;
-			transition: background-color 3s ease-in-out;
+		form {
+			background-color: #9f9fab;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			margin: 50px auto;
+			width: 300px;
+		}
+		input[type="text"], input[type="password"] {
+			display: block;
+			width: 94%;
+			padding: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #26262b;
+      color: #fff;
+		}
+		button {
+			background-color: #26262b;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			margin-top: 10px;
+		}
+		#error {
+			color: black;
+			margin-top: 10px;
+		}
+		#welcome {
+			background-color: #9f9fab;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			margin: 50px auto;
+			width: 300px;
+			display: none;
 		}
 	</style>
 </head>
 <body>
-	<h1>RZ</h1>
-	<p>This page changes its background color from black to white gradually!</p>
-	<button id="color-btn">Change Background Color</button>
+	<form id="login-form">
+    <center><h1>LOGIN</h1></center>
+		<input type="text" id="username" name="username" placeholder="Username">
+		<input type="password" id="password" name="password" placeholder="Password">
+		<button type="submit">Login</button>
+		<div id="error"></div>
+	</form>
+
+	<div id="welcome">
+		<h2>Welcome</h2>
+		<p>You have successfully logged in!</p>
+    <button id="go-to-wikipedia">Continue</button>
+	</div>
+
 	<script>
-		document.getElementById("color-btn").addEventListener("click", function(){
-			document.body.style.backgroundColor = "white";
+		// add event listener to login form
+		var loginForm = document.querySelector("#login-form");
+		loginForm.addEventListener("submit", function(event) {
+			// prevent default form submission
+			event.preventDefault();
+
+			// get username and password input values
+			var usernameInput = document.querySelector("#username");
+			var passwordInput = document.querySelector("#password");
+			var username = usernameInput.value;
+			var password = passwordInput.value;
+
+			// check if username and password are correct
+			if (username === "R123" && password === "R") {
+				// hide the login form and show the welcome message
+				document.querySelector("#login-form").style.display = "none";
+				document.querySelector("#welcome").style.display = "block";
+			} else {
+				// display error message
+				document.querySelector("#error").innerHTML = "Incorrect username or password.";
+			}
+      
+      // add event listener to "Go to Wikipedia" button
+var goToWikipediaButton = document.querySelector("#go-to-wikipedia");
+goToWikipediaButton.addEventListener("click", function() {
+  // navigate to Wikipedia
+  window.location.href = "https://www.wikipedia.org";
+});
+
 		});
 	</script>
 </body>
